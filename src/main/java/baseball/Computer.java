@@ -6,7 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Computer {
-    public List<Integer> getRandom() {
+    private List<Integer> answer;
+
+    public Computer() {
+    }
+
+    public List<Integer> getAnswer() {
+        return answer;
+    }
+
+    public void setRandom() {
         List<Integer> randomNum = new ArrayList<>();
         while (randomNum.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
@@ -14,6 +23,6 @@ public class Computer {
                 randomNum.add(randomNumber);
             }
         }
-        return randomNum;
+        this.answer = randomNum;
     }
 }

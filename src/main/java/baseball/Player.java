@@ -8,6 +8,10 @@ import java.util.List;
 public class Player {
     private List<Integer> numList = new ArrayList<>();
 
+    public Player() {
+
+    }
+
     public void input() {
         List<Integer> num = new ArrayList<>();
 
@@ -20,10 +24,7 @@ public class Player {
 
         if (isValidation(num)) {
             this.numList = num;
-        } else {
-            throw new IllegalArgumentException();
         }
-
     }
 
     public List<Integer> getNumList() {
@@ -31,9 +32,8 @@ public class Player {
     }
 
     private boolean isValidation(List<Integer> list) {
-        if (list.size() != 3) {
-            return false;
-        }
+        if (list.size() != 3) return false;
+        if (list.get(0) == list.get(1) || list.get(0) == list.get(2) || list.get(1) == list.get(2)) return false;
 
         return true;
     }
