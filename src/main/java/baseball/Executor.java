@@ -16,7 +16,7 @@ public class Executor {
     }
 
     public void startGame() {
-        System.out.println("게임을 시작합니다.");
+        System.out.println("게임을 시작합니다.");   // 문자열 하드코딩X 분리
         computer.setRandom();
         while (true) {
             player.input();
